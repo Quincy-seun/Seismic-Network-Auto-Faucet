@@ -9,10 +9,9 @@ Welcome to the Seismic Faucet Script – a powerful, multi-threaded tool that au
 + 🧾 Log results to success/fail files
 + 🪄 Retry mechanism to increase claim success rate
 + 📊 Real-time logging with colorful CLI output
-
+_______________________
 # **🧰 Installation Guide**
 
 1. Clone the repository
 
-<section> git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git </section>
-<section> cd Sesimic-Network-Auto-Faucet </section>
+<pre> git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git
