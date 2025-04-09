@@ -19,9 +19,10 @@ REQUEST_DELAY = 5               # Seconds between wallet processing
 JITTER = 0.5                    # Random delay variation (+/- seconds)
 MAX_ATTEMPTS = 3                # Max attempts per wallet
 CAPTCHA_TIMEOUT = 420           # Increase timeout for captcha solving (seconds)
+USE_PROXIES = True              # Set to False if you don't want to use proxies
 
 # API Configuration
-TWO_CAPTCHA_API_KEY = "YOUR_2CAPTCHA_KEY_HERE"
+TWO_CAPTCHA_API_KEY = "L42YMuceS5h2p2SO"
 HCAPTCHA_SITEKEY = "0a76a396-7bf6-477e-947c-c77e66a8222e"
 FAUCET_URL = "https://faucet-2.seismicdev.net/"
 API_ENDPOINT = "https://faucet-2.seismicdev.net/api/claim"
@@ -56,14 +57,15 @@ except Exception as e:
     print(f"{Fore.RED}✗ Failed to check 2Captcha balance: {str(e)}{Style.RESET_ALL}")
     exit(1)
 
-# Load proxies
-try:
-    with open(PROXIES_FILE, "r") as f:
-        proxies_list = [line.strip() for line in f if line.strip()]
-    print(f"{Fore.GREEN}✓ Loaded {len(proxies_list)} proxies{Style.RESET_ALL}")
-except Exception as e:
-    print(f"{Fore.YELLOW}⚠ No proxies loaded: {str(e)}{Style.RESET_ALL}")
-    proxies_list = []
+# Load proxies if enabled
+proxies_list = []
+if USE_PROXIES:
+    try:
+        with open(PROXIES_FILE, "r") as f:
+            proxies_list = [line.strip() for line in f if line.strip()]
+        print(f"{Fore.GREEN}✓ Loaded {len(proxies_list)} proxies{Style.RESET_ALL}")
+    except Exception as e:
+        print(f"{Fore.YELLOW}⚠ No proxies loaded: {str(e)}{Style.RESET_ALL}")
 
 # ================== UTILITIES ==================
 def now_local():
@@ -196,10 +198,10 @@ proxy_index = 0
 PROXY_LOCK = threading.Lock()
 
 def get_next_proxy():
+    if not USE_PROXIES or not proxies_list:
+        return None
     global proxy_index
     with PROXY_LOCK:
-        if not proxies_list:
-            return None
         proxy = proxies_list[proxy_index % len(proxies_list)]
         proxy_index += 1
         return proxy
