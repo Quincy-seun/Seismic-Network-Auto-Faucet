@@ -14,5 +14,5 @@ Welcome to the Seismic Faucet Script – a powerful, multi-threaded tool that au
 
 1. Clone the repository
 
-<section> git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git
-cd Sesimic-Network-Auto-Faucet </section>
+<section> git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git </section>
+<section> cd Sesimic-Network-Auto-Faucet </section>
