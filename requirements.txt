@@ -1,0 +1,6 @@
+2captcha-python
+requests
+twocaptcha
+colorama
+pytz
+tzlocal
