@@ -22,7 +22,7 @@ CAPTCHA_TIMEOUT = 420           # Increase timeout for captcha solving (seconds)
 USE_PROXIES = True              # Set to False if you don't want to use proxies
 
 # API Configuration
-TWO_CAPTCHA_API_KEY = "L42YMuceS5h2p2SO"
+TWO_CAPTCHA_API_KEY = "YOUR_2CAPTCHA_KEY_HERE"
 HCAPTCHA_SITEKEY = "0a76a396-7bf6-477e-947c-c77e66a8222e"
 FAUCET_URL = "https://faucet-2.seismicdev.net/"
 API_ENDPOINT = "https://faucet-2.seismicdev.net/api/claim"
