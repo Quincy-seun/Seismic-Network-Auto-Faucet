@@ -14,8 +14,8 @@ _______________________
 
 1. Clone the repository
 ```
-git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git 
-cd Sesimic-Network-Auto-Faucet
+git clone https://github.com/Quincy-seun/Seismic-Network-Auto-Faucet.git 
+cd Seismic-Network-Auto-Faucet
 ```
 2. Install dependencies
 ```
