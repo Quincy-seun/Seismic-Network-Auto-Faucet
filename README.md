@@ -22,7 +22,7 @@ cd Sesimic-Network-Auto-Faucet
 pip install -r requirements.txt
 ```
 3. Configure the script
-* Open faucet.py
+* Open ```faucet.py```
 * Edit the following in lines 17 - 25:
 ```
 THREADS = 1                     # Number of parallel threads
@@ -39,3 +39,17 @@ TWO_CAPTCHA_API_KEY = "YOUR_2CAPTCHA_KEY_HERE"
 ```
 python faucet.py
 ```
+________________
+# 📁 Required Files
+Ensure the following files are present in faucet directory:
++ ```wallets.txt``` - 💼 List wallet addresses line by line
++ ```proxies.txt``` - 🌐 List proxies in format: ```http://user:pass@ip:port```
+_________________
+# 🧪 How It Works
+1. Reads wallet addresses and proxies from respective files
+2. Solves hcaptcha via 2captcha
+3. Sends claim request to Seismic faucet
+4. Logs results with retry mechanism
+_______________
+# Need Help?
+Send a message on [Telegram](https://t.me/ruby_lanshi)
