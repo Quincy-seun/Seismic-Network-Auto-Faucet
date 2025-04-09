@@ -13,5 +13,29 @@ _______________________
 # **🧰 Installation Guide**
 
 1. Clone the repository
+```
+git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git 
+cd Sesimic-Network-Auto-Faucet
+```
+2. Install dependencies
+```
+pip install -r requirements.txt
+```
+3. Configure the script
+* Open faucet.py
+* Edit the following in lines 17 - 25:
+```
+THREADS = 1                     # Number of parallel threads
+REQUEST_DELAY = 5               # Seconds between wallet processing
+JITTER = 0.5                    # Random delay variation (+/- seconds)
+MAX_ATTEMPTS = 3                # Max attempts per wallet
+CAPTCHA_TIMEOUT = 420           # Increase timeout for captcha solving (seconds)
+USE_PROXIES = True              # Set to False if you don't want to use proxies
 
-<pre> git clone https://github.com/Quincy-seun/Sesimic-Network-Auto-Faucet.git
+# API Configuration
+TWO_CAPTCHA_API_KEY = "YOUR_2CAPTCHA_KEY_HERE"
+```
+4. Run the script
+```
+python faucet.py
+```
